@@ -39,15 +39,17 @@ main {
 #icons {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .card {
     background-color: white;
-    padding: 30px 80px;
+    padding: 30px 0;
     border-radius: 10px;
     box-shadow: 2px 2px 2px grey;
     height:max-content;
-    width: calc((100% / 5) - 20px);
+    width: calc((100% / 5) - 60px);
     text-align: center;
     margin: 10px 10px;
 }
+
