@@ -128,6 +128,7 @@ const colors = {
 
 // argomenti: array delle icon e il node html in cui stampare le nostre icone
 const printIcons = (arr, container) => {
+    container.innerHTML = "";
     // ciclo su ogni icona e compongo il markup html da iniettare
 arr.forEach((element) => {
 
@@ -167,18 +168,44 @@ console.log(iconsColored);
 printIcons(iconsColored, containerIcons); 
 
 
-//   Milestone 3
 //   Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+
+// Estrapolo le categorie dalle icone
+const iconCategories = [];
+
+icons.forEach(
+    (element) => {
+        if (iconCategories.includes(element.category) == false) {
+            iconCategories.push(element.category);
+        }        
+    }
+);
+
 //   Creo una option per ogni categoria
-// const iconCategories = [];
+var selectCategories = document.getElementById("category")
 
-// icons.forEach(
-//     (elm) => {
-//         if (iconCategories.includes(elm.category) == false) {
-//             iconCategories.push(elm.category);
+iconCategories.forEach(
+    (element) => {
+              
+              selectCategories.innerHTML += `<option value="${element}">${element}</option>`;
+    }
+);
 
-//         }        
-//     }
-// );
+// creo l'evento change sulla select
+selectCategories.addEventListener("change",
+    function () {
+        // recupero il valore della select
+        selectCategories.values
 
+        const iconsFiltered = iconsColored.filter(
+            element => {
+                if (element.category == selectCategories.value) {
+                    return true;
+                }
+                return false;
+            }
+        );
 
+        printIcons(iconsFiltered, containerIcons)
+    }
+);
