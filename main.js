@@ -112,9 +112,10 @@ const icons = [
   // Milestone 1
   // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 
-  icons.forEach((element) => {
+icons.forEach((element) => {
     document.getElementById("icons").innerHTML += `<div class="card">
-                                                            <i class="fas fa-horse"></i>
-                                                            <div class="cardText">Prova</div>
+                                                            <i class="${element.family} ${element.prefix}${element.name}"></i>
+                                                            <div class="cardText">${element.name}</div>
                                                         </div>`
-  })
+  }
+  )
