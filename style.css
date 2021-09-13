@@ -1,0 +1,18 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common */
+body {
+    font-family: 'Acme', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+/* Header */
+#headerTop {
+    font-family: 'Acme', sans-serif;
+}
